@@ -1,6 +1,9 @@
 @echo off
 SETLOCAL
 set PORT=8280
+set DEBUG=true
+set DEBUG_COLORS=true
+set DEBUG_FD=1
 set SCRIPT_DIR=%~dp0
 set NODEMON_BIN=%SCRIPT_DIR%/nodemon.cmd
 set WORKDIR=%SCRIPT_DIR%/..
@@ -15,7 +18,7 @@ if "%1"=="-d" (
   set ENABLE_DEBUG="true"
 )else (
   set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
-) 
+)
 shift
 goto setArgs
 
